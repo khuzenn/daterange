@@ -13,7 +13,7 @@
     <script defer src="https://cdn.datatables.net/datetime/1.5.2/js/dataTables.dateTime.min.js"></script>
     <!-- Plugin sum() -->
     <script defer src="https://cdn.datatables.net/plug-ins/2.0.3/api/sum().js"></script>
-    <script defer src="assets/js/script.js"></script>
+    <script defer src="assets/js/daterange.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daterange</title>
@@ -57,8 +57,8 @@
                     <td class="text-center"><?= $data->jabatan; ?></td>
                     <td class="text-center"><?= $data->gender; ?></td>
                     <td class="text-center"><?= $data->tanggal; ?></td>
-                    <td class="text-center"><?= $data->order; ?></td>
-                    <td class="text-center"><?= $data->paid; ?></td>
+                    <td class="text-center"><?= rupiah($data->order); ?></td>
+                    <td class="text-center"><?= rupiah($data->paid); ?></td>
                 </tr>
                 <?php
                     $no++;
@@ -70,6 +70,7 @@
                     <th></th>
                     <th colspan="4">Total</th>
                     <th class="text-center" id="total_pesanan"></th>
+                    <th class="text-center" id="formattedColumn6"></th>
                 </tr>
             </tfoot>
         </table>

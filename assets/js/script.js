@@ -9,7 +9,7 @@ $(document).ready(function () {
                 sum = api.column(i, { page: 'current' }).data().sum();
 
                 //to format this sum
-                formated = parseFloat(sum).toLocaleString(undefined, { minimumFractionDigits: 2 });
+                formated = parseFloat(sum).toLocaleString(sum, { minimumFractionDigits: 2 });
                 $(api.column(i).footer()).html('Rp. ' + formated);
             }
         }

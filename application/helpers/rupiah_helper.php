@@ -1,8 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 if (!function_exists('rupiah')) {
-    function rupiah($angka)
+    function rupiah($angka, $removeFormat = false)
     {
+        if ($removeFormat) {
+            $angka = preg_replace('/[^\d]/', '', $angka); // Menghapus semua karakter non-digit
+        }
         $hasil_rupiah = "Rp." . number_format($angka, 0, ',', '.');
         return $hasil_rupiah;
     }
